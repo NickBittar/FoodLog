@@ -30,7 +30,7 @@ $(function () {
 
     // Load this page first to view
     //goToDate();
-    loadPage(app.lastPage);
+    loadPage(app.lastPage || 'foods');
     if (app.lastPage === 'food-log') {
         goToDate(app.lastDate);
     }

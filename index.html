@@ -37,9 +37,12 @@
         </h2>
 
         <div>
-            <button id="add-food-button" class="ui positive button"><i class="plus icon"></i>Add Food</button>
-            <button id="export-food-button" onclick="exportFoods()" class="ui basic button"><i class="upload icon"></i>Export Food</button>
-            <button id="import-food-button" onclick="importFoods()" class="ui basic button"><i class="download icon"></i>Import Food</button>
+            <button id="add-food-button" class="ui labeled icon positive button"><i class="plus icon"></i>Add Food</button>
+            <div class="ui buttons">
+                <button id="export-food-button" onclick="exportFoods()" class="ui labeled icon button"><i class="upload icon"></i>Export Food</button>
+                <div class="or"></div>
+                <button id="import-food-button" onclick="importFoods()" class="ui right labeled icon button">Import Food<i class="download icon"></i></button>
+            </div>
         </div>
 
         <h4 class="ui horizontal divider header">

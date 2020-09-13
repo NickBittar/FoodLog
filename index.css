@@ -1,0 +1,13 @@
+.visible.transition.ui.input {
+    display: inline-flex !important;
+}
+.scroll-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.margin-top-20 {
+    margin-top: 20px;
+}
+.hidden {
+    display: none !important;
+}

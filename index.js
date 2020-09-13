@@ -145,6 +145,35 @@ function editFood(foodId) {
         .modal('show');
 }
 
+function exportFoods() {
+    const exportFoodData = btoa(JSON.stringify(foods));
+    $('#export-food-data').val(exportFoodData);
+    // Open modal
+    $('#export-food-moal')
+        .modal({
+            centered: false,
+            duration: 200,
+        })
+        .modal('show');
+}
+function importFoods() {
+    // Clear any previous values
+    $('#import-food-data').val('');
+    // Open modal
+    $('#import-food-moal')
+        .modal({
+            centered: false,
+            duration: 200,
+            onApprove: function () {
+                const encodedFood = atob($('#import-food-data').val());
+                localStorage.setItem('foods', encodedFood);
+                foods = loadFood();
+                loadFoodsTable();
+            }
+        })
+        .modal('show');
+}
+
 function init_foodLogs() {
     // Get last 12 days of food logs
     const foodLogs = new Array(12);

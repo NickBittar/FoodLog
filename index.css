@@ -11,3 +11,6 @@
 .hidden {
     display: none !important;
 }
+textarea#export-food-data, textarea#import-food-data {
+    font-family: monospace;
+}

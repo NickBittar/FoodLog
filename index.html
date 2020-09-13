@@ -37,7 +37,9 @@
         </h2>
 
         <div>
-            <button id="add-food-button" class="ui button"><i class="plus icon"></i>Add Food</button>
+            <button id="add-food-button" class="ui success button"><i class="plus icon"></i>Add Food</button>
+            <button id="export-food-button" onclick="exportFoods()" class="ui button"><i class="plus icon"></i>Export Food</button>
+            <button id="import-food-button" onclick="importFoods()" class="ui button"><i class="plus icon"></i>Import Food</button>
         </div>
 
         <h4 class="ui horizontal divider header">
@@ -187,7 +189,7 @@
                 </div>
                 <div class="field">
                     <label>Units of Serving</label>
-                    <input type="text" name="units" placeholder="ex: oz, lbs, cup, etc..."/>
+                    <input type="text" name="units" placeholder="ex: oz, lbs, cup, etc..." />
                 </div>
                 <div class="field">
                     <label>Serving Size Amount</label>
@@ -217,6 +219,56 @@
             </div>
             <div class="ui positive right labeled icon button">
                 Add
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="export-food-moal" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Export Food
+        </div>
+        <div class="content">
+            <div class="description">
+                <div class="ui header">Exported Food Data</div>
+                <p>Copy the below text and paste it into the import data area to copy over food data.</p>
+            </div>
+            <div class="ui form">
+                <div class="field">
+                    <textarea readonly rows="16" id="export-food-data"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui black deny button">
+                Close
+            </div>
+        </div>
+    </div>
+    <div id="import-food-moal" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Import Food
+        </div>
+        <div class="content">
+            <div class="description">
+                <div class="ui header">Import Food Data</div>
+                <p>Note: Any currently saved foods will be cleared and overwritten by the imported foods</p>
+                <p>Paste the exported food data code here:</p>
+            </div>
+            <div class="ui form">
+                <div class="field">
+                    <textarea rows="16" id="import-food-data"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui black deny button">
+                Cancel
+            </div>
+            <div class="ui positive right labeled icon button">
+                Import
                 <i class="checkmark icon"></i>
             </div>
         </div>
